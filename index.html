@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Translate Proxy</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Translate Proxy</h1>
+    <p style="font-size: small;">Made by blitzedzz</p>
+    <input type="text" id="urlInput" placeholder="Enter URL here">
+    <br>
+    <button onclick="openTranslation()">Translate</button>
+
+    <script>
+        function openTranslation() {
+            const url = document.getElementById('urlInput').value;
+            if (url) {
+                const translateUrl = `https://translate.google.com/translate?sl=es&tl=en&hl=en-US&u=${encodeURIComponent(url)}&client=webapp`;
+                window.open(translateUrl, '_blank');
+            } else {
+                alert("Please enter a URL.");
+            }
+        }
+    </script>
+</body>
+</html>
